@@ -7,6 +7,24 @@
     </head>
     
     <body>
-        <button type="button">Click me to change the LED!</button>
+        <button type="button" id="led">Click me to change the LED!</button>
     </body>
+
+    <script>
+
+        var button = document.getElementById("led");
+
+        button.addEventListener("click", function (evt) {
+            evt.preventDefault();
+
+            fetch("/led").then(function (response) {
+                response.text().then(function (text) {
+                    console.log(text);
+                });
+            });
+
+
+        });
+
+    </script>
 </html>
