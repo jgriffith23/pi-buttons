@@ -7,17 +7,21 @@
     </head>
     
     <body>
-        <button type="button" id="led">Click me to change the LED!</button>
+        <button type="button" id="blue">Click me to change the blue LED!</button>
+        <button type="button" id="green">Click me to change the green LED!</button>
+        <button type="button" id="red">Click me to change the red LED!</button>
     </body>
 
     <script>
 
-        var button = document.getElementById("led");
+        var blue = document.getElementById("blue");
+        var green = document.getElementById("green");
+        var red = document.getElementById("red");
 
-        button.addEventListener("click", function (evt) {
+        blue.addEventListener("click", function (evt) {
             evt.preventDefault();
 
-            fetch("/led").then(function (response) {
+            fetch("/blue-led").then(function (response) {
                 response.text().then(function (text) {
                     console.log(text);
                 });
@@ -25,6 +29,32 @@
 
 
         });
+
+        red.addEventListener("click", function (evt) {
+            evt.preventDefault();
+
+            fetch("/red-led").then(function (response) {
+                response.text().then(function (text) {
+                    console.log(text);
+                });
+            });
+
+
+        });
+
+        green.addEventListener("click", function (evt) {
+            evt.preventDefault();
+
+            fetch("/green-led").then(function (response) {
+                response.text().then(function (text) {
+                    console.log(text);
+                });
+            });
+
+
+        });
+
+
 
     </script>
 </html>
