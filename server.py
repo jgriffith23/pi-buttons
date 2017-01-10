@@ -32,5 +32,5 @@ def change_led_status():
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads"
     # our web app if we change the code.
-    # app.run(host='192.168.3.248', port=80, debug=True)
-    app.run(debug=True)
+    app.run(host='192.168.1.136', port=80, debug=True)
+    # app.run(debug=True)
